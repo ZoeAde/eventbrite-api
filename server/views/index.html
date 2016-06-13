@@ -8,50 +8,78 @@
     <div class="container">
 
       <h1>{{ title }}</h1>
-
-
-        <div class="form-group">
-          <input type="submit" id="event-test" class="btn btn-default" value="CSV of all events">
-        </div>
-        <div class="form-group">
-          <input type="submit" id="event-test" class="btn btn-default" value="CSV of all attendees">
-        </div>
+<!--         <button>
+          <a href="#" class="export-events">Export Events To Excel</a>
+        </button> -->
+        <button>
+          <a href="#" class="export-attendees">Export Attendees To Excel</a>
+        </button>
 
       <hr>
+      <div id="attendeeData">
+          <table class="attendee-table table-striped table-bordered table-hover table-condensed table-responsive">
+              <tr>
+                  <th>Team</th>
+                  <th>Base: Price Display</th>
+                  <th>Base: Price Currency</th>
+                  <th>Base: Price Value</th>
+                  <th>Base: Price Major Value</th>
+                  <th>Eventbrite: Price Display</th>
+                  <th>Eventbrite: Price Currency</th>
+                  <th>Eventbrite: Price Value</th>
+                  <th>Eventbrite: Price Major Value</th>
+                  <th>Gross Price Display</th>
+                  <th>Gross Price Currency</th>
+                  <th>Gross Price Value</th>
+                  <th>Gross Price Major Value</th>
+                  <th>Payment Fee: Price Display</th>
+                  <th>Payment Fee: Price Currency</th>
+                  <th>Payment Fee: Price Value</th>
+                  <th>Payment Fee: Price Major Value</th>
+                  <th>Tax: Price Display</th>
+                  <th>Tax: Price Currency</th>
+                  <th>Tax: Price Value</th>
+                  <th>Tax: Price Major Value</th>
+                  <th>Resource URI</th>
+                  <th>ID</th>
+                  <th>Changed</th>
+                  <th>Created</th>
+                  <th>Quantity</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Name</th>
+                  <th>Addresses</th>
+                  <th>Barcodes: Status</th>
+                  <th>Barcodes: Barcode</th>
+                  <th>Barcodes: Checkin Type</th>
+                  <th>Barcodes: Created</th>
+                  <th>Barcodes: Changed</th>
+                  <th>Answers</th>
+                  <th>Checked In</th>
+                  <th>Cancelled</th>
+                  <th>Refunded</th>
+                  <th>Affiliate</th>
+                  <th>Status</th>
+                  <th>Event ID</th>
+                  <th>Order ID</th>
+                  <th>Ticket Class ID</th>
 
-      <p>Results<strong><span class="query"></span></strong></p>
 
 
-      <h2>Upcoming Events!</h2>
-      <div id="event-list">
-        <table class="table table-bordered table-striped">
-          <!-- <tr>
-            <th>Event ID</th>
-            <th>Event Name</th>
-            <th>Event Description</th>
-          </tr> -->
-
-          <div class="events-table">
-
-          </div>
-
-          <!-- <tr>
-            <th>Attendee ID</th>
-            <th>Attendee Name</th>
-            <th>Attendee Email</th>
-          </tr> -->
-          <div class="attendees-table">
-
-          </div>
-
-        </table>
+              </tr>
+          </table>
       </div>
-
-<!--       <div class="results-area" >
-        <ul class="results group">
-        </ul>
+      <br/>
+<!--       <div id="eventData">
+          <table class="event-table">
+              <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Description</th>
+              </tr>
+          </table>
       </div> -->
-
     </div>
 
 {% endblock %}
