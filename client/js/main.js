@@ -1,30 +1,46 @@
 $(document).on('ready', function() {
   console.log('sanity check!');
 
-$.get('http://localhost:5000/eventbrite/events').then(function (response) {
-    console.log('YO YO YO');
-   var events = response;
-   console.log('response', response);
-   // $('#event-list').html("YO");
+        // $.get('http://localhost:5000/eventbrite/events').then(function (response) {
+        //     console.log('YO YO YO');
+        //    var events = response;
+        //    console.log('response', response);
+        //    // $('#event-list').html("YO");
 
-            if(events.length) {
-                var s;
-                for(var i=0;i<events.length;i++) {
+        //             if(events.length) {
+        //                 var s;
+        //                 for(var i=0;i<events.length;i++) {
 
-                    var event = events[i];
-                    console.dir(event);
-                    s += "<tr class='eventList'>";
-                    s += "<td>" + event.id + "</td>";
-                    s += "<td>" + event.name + "</td>";
-                    s += "<td>" + event.description + "</td>";
-                    s += "</tr>";
-                    $('.events-table').append(s);
-                }
+        //                     var event = events[i];
+        //                     console.dir(event);
+        //                     s += "<tr class='eventList'>";
+        //                     s += "<td>" + event.id + "</td>";
+        //                     s += "<td>" + event.name + "</td>";
+        //                     s += "<td>" + event.description + "</td>";
+        //                     s += "</tr>";
+        //                     $('.events-table').append(s);
+        //                 }
 
-            } else {
-                $events.html("<p>Sorry, there are no events.</p>");
-            }
+        //             } else {
+        //                 $events.html("<p>Sorry, there are no events.</p>");
+        //             }
+        // });
+
+
+        $.get('http://localhost:5000/eventbrite/attendees').then(function (response) {
+           var attendees = response;
+                    if(attendees.length) {
+                        for(var i=0;i<attendees.length;i++) {
+                            var attendee = attendees[i];
+                            var newAttendee = "<tr class='attendeeList'><td>" + attendee.id + "</td><td>" + attendee.name + "</td><td>" + attendee.email + "</td></tr>";
+                            $('.attendees-table').append(newAttendee);
+                        }
+
+                    } else {
+                        $('.attendees-table').html("<p>Sorry, there are no attendees.</p>");
+                    }
         });
+
 
 });
 
