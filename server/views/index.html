@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+
+      <h1>{{ title }}</h1>
+
+
+        <div class="form-group">
+          <input type="submit" id="event-test" class="btn btn-default" value="TEST EVENT">
+        </div>
+
+      <hr>
+
+      <p>Results<strong><span class="query"></span></strong></p>
+
+
+      <h2>Upcoming Events!</h2>
+      <div id="event-list">
+        <table class="table table-bordered table-striped">
+          <tr>
+            <th>Event ID</th>
+            <th>Even Name</th>
+            <th>Event Description</th>
+          </tr>
+
+          <div class="events-table">
+
+          </div>
+
+
+        </table>
+      </div>
+
+<!--       <div class="results-area" >
+        <ul class="results group">
+        </ul>
+      </div> -->
+
+    </div>
+
+{% endblock %}
