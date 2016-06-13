@@ -8,15 +8,16 @@
     <div class="container">
 
       <h1>{{ title }}</h1>
-<!--         <button>
-          <a href="#" class="export-events">Export Events To Excel</a>
-        </button> -->
-        <button>
-          <a href="#" class="export-attendees">Export Attendees To Excel</a>
-        </button>
+      <h3>Which Information Do you need?</h3>
+      <button class="event-button-click">All Events</button>
+      <button class="attendee-button-click">All Attendees</button>
 
       <hr>
       <div id="attendeeData">
+          <button>
+            <a href="#" class="export-attendees">Export Attendees To Excel</a>
+          </button>
+
           <table class="attendee-table table-striped table-bordered table-hover table-condensed table-responsive">
               <tr>
                   <th>Team</th>
@@ -64,14 +65,15 @@
                   <th>Event ID</th>
                   <th>Order ID</th>
                   <th>Ticket Class ID</th>
-
-
-
               </tr>
           </table>
       </div>
       <br/>
-<!--       <div id="eventData">
+      <div id="eventData">
+          <button>
+            <a href="#" class="export-events">Export Events To Excel</a>
+          </button>
+
           <table class="event-table">
               <tr>
                   <th>ID</th>
@@ -79,7 +81,7 @@
                   <th>Description</th>
               </tr>
           </table>
-      </div> -->
+      </div>
     </div>
 
 {% endblock %}
