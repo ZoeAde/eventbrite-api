@@ -28,31 +28,6 @@ router.get('/events', function (req, res) {
 
 
 
-function loopPages(url) {
-    $.getJSON(url, function (data) {
-        var pages = data.pagination.page_count;
-        var myList = [];
-        for (var i = 1; i <= pages; i++) {
-            $.getJSON(url + i, function (data) {
-                obj = data.results;
-                console.log('this is obj');
-                $.each(obj, function (k, v) {
-                    myList.push(v.city_name);
-                });
-            return myList;
-            });
-        }
-    });
-}
-
-loopPages('https://www.eventbriteapi.com/v3/users/me/owned_event_attendees/?token=' + config.eventbriteSecret + '&page=');
-
-
-
-
-
-
-
 //Show All Attendees
 router.get('/attendees', function (req, res) {
     var url = 'http://eventbriteapi.com/v3/users/me/owned_event_attendees/?token=' + config.eventbriteSecret;

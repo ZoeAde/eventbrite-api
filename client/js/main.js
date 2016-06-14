@@ -1,19 +1,31 @@
 $(document).on('ready', function() {
   console.log('sanity check!');
         // HIDE SECTIONS ON LOAD
-        $('#eventData').hide();
-        $('#attendeeData').hide();
+        // $('#eventData').hide();
+        // // $('#attendeeData').hide();
 
-        // Show Sections on button click
-        $('.event-button-click').on('click', function() {
-            $('#attendeeData').hide();
-            $('#eventData').show();
-        });
+        // // Show Sections on button click
+        // $('.event-button-click').on('click', function() {
+        //     $('#attendeeData').hide();
+        //     $('#eventData').show();
+        // });
 
-        $('.attendee-button-click').on('click', function() {
-            $('#eventData').hide();
-            $('#attendeeData').show();
-        });
+        // $('.attendee-button-click').on('click', function() {
+        //     $('#eventData').hide();
+        //     $('#attendeeData').show();
+        // });
+
+        // $('#name-select-div').on('click', function() {
+        //     if($('[name="name"]').is(':checked')) {
+        //         console.log('checked@');
+        //     }
+
+        //     if($('[name="name"]')not.(.is(':checked')) {
+        //         console.log('checked@');
+        //     }
+
+
+        // });
 
 
         // DATA GET REQUESTS

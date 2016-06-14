@@ -3,38 +3,28 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var config = require('../../_config');
-
-var pages;
+var async = require('async');
+var a = true;
+var pages = 1;
+var totalPages;
 var attendees = [];
-var base_url = 'http://eventbriteapi.com/v3/users/me/owned_event_attendees/?token=' + config.eventbriteSecret;
-
-router.get('/attendees', function (req, res) {
-    request(base_url, function (error, response, body) {
-        var jsontext = JSON.parse(body);
-        pages = jsontext.pagination.page_count;
-        console.log('pages:', pages);
-
-        //loop through all then
-        // while (pages >= 1) {
-        if (pages >= 783) {
-            loopOnePage(base_url, pages);
-            console.log(pages);
-        }
-    });
-    console.log(attendees);
-    res.send(attendees);
-});//end function
+var base_url = 'http://eventbriteapi.com/v3/users/me/owned_event_attendees/?token=' + config.eventbriteSecret+"&page=";
 
 
+router.get('/attendees', function (req, res, next) {
 
-function loopOnePage(url, page) {
-    var newURL = url + '&page=' + page;
-    request(newURL, function (error, response, body) {
-        var allJSON = JSON.parse(body);
-        var allAttendeesJSON = allJSON.attendees;
-        console.log(allAttendeesJSON[0]);
+    var x = async.whilst(function() {
+       // return pages < totalPages;
+       return a;
+    },
+    function(next) {
+        request(base_url+pages, function(error, response, body) {
+            body = JSON.parse(body);
+            totalPages = body.pagination.page_count;
 
-            for (var i=0; i < allAttendeesJSON.length; i++) {
+        //all data
+        var allAttendeesJSON = body.attendees;
+        for (var i=0; i < allAttendeesJSON.length; i++) {
                     current_attendee = allAttendeesJSON[i];
 
                  // RETURN ALL DATA
@@ -102,9 +92,21 @@ function loopOnePage(url, page) {
                     ticket_class_id: current_attendee.ticket_class_id
                   };
                 attendees.push(single_attendee);
-                }
-            pages--;
-    });
-}
+        // console.log('attendees', attendees)
+        }
+
+        next(null, attendees);
+        });
+        a = false;
+    },
+    function(err, result) {
+        console.log(result);
+        // return attendees;
+   });
+
+});
+
+
+
 
 module.exports = router;
