@@ -16,7 +16,7 @@ $(document).on('ready', function() {
         });
 
 
-
+        // DATA GET REQUESTS
         $.get('http://localhost:5000/eventbrite/attendees').then(function (response) {
            var attendees = response;
                     if(attendees.length) {
