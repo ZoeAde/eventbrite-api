@@ -1,6 +1,7 @@
 $(document).ready(function () {
             console.log("HELLO")
             function exportTableToCSV($table, filename) {
+                console.log('export!!!');
                 var $headers = $table.find('tr:has(th)')
                     ,$rows = $table.find('tr:has(td)')
                     ,tmpColDelim = String.fromCharCode(11) // vertical tab character
