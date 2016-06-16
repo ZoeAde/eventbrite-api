@@ -4,9 +4,9 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color:#fff;
 }
 
-.checkboxes {
-  display: inline;
+button {
+  color: #fff;
 }
