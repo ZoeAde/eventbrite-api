@@ -1,5 +1,4 @@
 $(document).ready(function () {
-            console.log("HELLO")
             function exportTableToCSV($table, filename) {
                 console.log('export!!!');
                 var $headers = $table.find('tr:has(th)')
@@ -45,7 +44,7 @@ $(document).ready(function () {
             $(".export-attendees").click(function (event) {
                 // var outputFile = 'export'
                 var outputFile = window.prompt("What do you want to name your output file (Note: This won't have any effect on Safari)") || 'export';
-                outputFile = outputFile.replace('.csv','') + '.csv'
+                outputFile = outputFile.replace('.csv','') + '.csv';
 
                 // CSV
                 exportTableToCSV.apply(this, [$('#attendeeData>table'), outputFile]);
@@ -53,24 +52,6 @@ $(document).ready(function () {
                 // IF CSV, don't do event.preventDefault() or return false
                 // We actually need this to be a typical hyperlink
             });
-
-
-
-// Field Check Boxes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         });
 
 
