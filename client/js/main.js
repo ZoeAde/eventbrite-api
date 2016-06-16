@@ -14,16 +14,16 @@ $(document).on('ready', function() {
             $(column).toggle();
         });
 
-        // $("#checkAll").change(function () {
-        //     $("input:checkbox").prop('checked', $(this).prop("checked"));
-        //     $('.col').toggle();
-        //     $('.colData').toggle();
-        // });
+        $("#checkAll").change(function () {
+            $("input:checkbox").prop('checked', $(this).prop("checked"));
+            $('.col').toggle();
+            $('.colData').toggle();
+        });
 
         // DATA GET REQUESTS
         $.get('http://localhost:5000/eventbrite/attendees').then(function (response) {
            var attendees = response;
-           console.log(response);
+           console.log('the response', response);
            if (attendees) {
             $('.inputsection').html(attendees);
            }
@@ -87,4 +87,3 @@ $(document).on('ready', function() {
 
 
 });
-

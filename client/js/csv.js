@@ -17,7 +17,6 @@ $(document).ready(function () {
                     'download': filename
                         ,'href': csvData
                 });
-
                 function formatRows(rows){
                     return rows.get().join(tmpRowDelim)
                         .split(tmpRowDelim).join(rowDelim)
