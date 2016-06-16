@@ -7,67 +7,256 @@
 
     <div class="container">
 
-      <h1>{{ title }}</h1>
-      <h3>Which Information Do you need?</h3>
-      <button class="event-button-click">All Events</button>
-      <button class="attendee-button-click">All Attendees</button>
+      <button>
+        <a href="#" class="export-attendees">Export Attendees To Excel</a>
+      </button>
 
-      <hr>
-      <h4>Select Fields</h4>
-      <div class="inputsection"></div>
+      <h4>Select Fields To View</h4>
+      <div class="checkbox">
+        <label><input type="checkbox" checked id="checkAll">Select All</label>
+      </div>
+
+      <div class="row">
+        <h2>Attendee</h2>
+        <hr>
+      </div>
+
+      <div class="row">
+          <!-- profile section -->
+          <div class="col-sm-2">
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col27">First Name</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col28">Last Name</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col29">Email</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col30">Name</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col31">Addresses</label>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col37">Answers</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col38">Checked In</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col39">Cancelled</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col40">Refunded</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col41">Affiliate</label>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="checkbox">
+              <label><input id="radio-col1" type="checkbox" checked name="col1">Team</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col42">Status</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col43">Event ID</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col44">Order ID</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col45">Ticket Class ID</label>
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col22">Resource URI</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col23">ID</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col24">Changed</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col25">Created</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col26">Quantity</label>
+            </div>
+          </div>
+
+          <!-- barcodes section -->
+          <div class="col-sm-2">
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col32">Barcodes: Status</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col33">Barcodes: Barcode</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col34">Barcodes: Checkin Type</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col35">Barcodes: Created</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col36">Barcodes: Changed</label>
+            </div>
+          </div>
+      </div> <!-- end attendee row -->
+
+      <div class="row">
+        <h2>Pricing</h2>
+        <hr>
+      </div>
+      <div class="row">
+          <!-- base price section -->
+          <div class="col-sm-2">
+            <h4>Base</h4>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col2">Price Display</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col3">Price Currency</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col4">Price Value</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col5">Price Major Value</label>
+            </div>
+          </div>
+
+          <!-- evetbrite price section -->
+          <div class="col-sm-2">
+            <h4>Eventbrite</h4>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col6">Price Display</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col7">Price Currency</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col8">Price Value</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col9">Price Major Value</label>
+            </div>
+          </div>
+
+          <!-- gross price section -->
+          <div class="col-sm-2">
+            <h4>Gross</h4>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col10">Price Display</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col11">Price Currency</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col12">Price Value</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col13">Price Major Value</label>
+            </div>
+          </div>
+
+          <!-- payment fee section -->
+          <div class="col-sm-2">
+              <h4>Payment Fee</h4>
+              <div class="checkbox">
+                <label><input type="checkbox" checked name="col14">Price Display</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" checked name="col15">Price Currency</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" checked name="col16">Price Value</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" checked name="col17">Price Major Value</label>
+              </div>
+          </div>
+
+          <!-- tax price section -->
+          <div class="col-sm-2">
+            <h4>Tax</h4>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col18">Price Display</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col19">Price Currency</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col20">Price Value</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" checked name="col21">Price Major Value</label>
+            </div>
+          </div>
+      </div> <!-- end pricing row -->
+
+
+
       <div id="attendeeData">
-
-          <button>
-            <a href="#" class="export-attendees">Export Attendees To Excel</a>
-          </button>
           <br><br><br>
           <table class="attendee-table table-striped table-bordered table-hover table-condensed table-responsive">
               <tr>
-                  <th>Team</th>
-                  <th>Base: Price Display</th>
-                  <th>Base: Price Currency</th>
-                  <th>Base: Price Value</th>
-                  <th>Base: Price Major Value</th>
-                  <th>Eventbrite: Price Display</th>
-                  <th>Eventbrite: Price Currency</th>
-                  <th>Eventbrite: Price Value</th>
-                  <th>Eventbrite: Price Major Value</th>
-                  <th>Gross Price Display</th>
-                  <th>Gross Price Currency</th>
-                  <th>Gross Price Value</th>
-                  <th>Gross Price Major Value</th>
-                  <th>Payment Fee: Price Display</th>
-                  <th>Payment Fee: Price Currency</th>
-                  <th>Payment Fee: Price Value</th>
-                  <th>Payment Fee: Price Major Value</th>
-                  <th>Tax: Price Display</th>
-                  <th>Tax: Price Currency</th>
-                  <th>Tax: Price Value</th>
-                  <th>Tax: Price Major Value</th>
-                  <th>Resource URI</th>
-                  <th>ID</th>
-                  <th>Changed</th>
-                  <th>Created</th>
-                  <th>Quantity</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Email</th>
-                  <th>Name</th>
-                  <th>Addresses</th>
-                  <th>Barcodes: Status</th>
-                  <th>Barcodes: Barcode</th>
-                  <th>Barcodes: Checkin Type</th>
-                  <th>Barcodes: Created</th>
-                  <th>Barcodes: Changed</th>
-                  <th>Answers</th>
-                  <th>Checked In</th>
-                  <th>Cancelled</th>
-                  <th>Refunded</th>
-                  <th>Affiliate</th>
-                  <th>Status</th>
-                  <th>Event ID</th>
-                  <th>Order ID</th>
-                  <th>Ticket Class ID</th>
+                  <th class="col1">Team</th>
+                  <th class="col2">Base: Price Display</th>
+                  <th class="col3">Base: Price Currency</th>
+                  <th class="col4">Base: Price Value</th>
+                  <th class="col5">Base: Price Major Value</th>
+                  <th class="col6">Eventbrite: Price Display</th>
+                  <th class="col7">Eventbrite: Price Currency</th>
+                  <th class="col8">Eventbrite: Price Value</th>
+                  <th class="col9">Eventbrite: Price Major Value</th>
+                  <th class="col10">Gross Price Display</th>
+                  <th class="col11">Gross Price Currency</th>
+                  <th class="col12">Gross Price Value</th>
+                  <th class="col13">Gross Price Major Value</th>
+                  <th class="col14">Payment Fee: Price Display</th>
+                  <th class="col15">Payment Fee: Price Currency</th>
+                  <th class="col16">Payment Fee: Price Value</th>
+                  <th class="col17">Payment Fee: Price Major Value</th>
+                  <th class="col18">Tax: Price Display</th>
+                  <th class="col19">Tax: Price Currency</th>
+                  <th class="col20">Tax: Price Value</th>
+                  <th class="col21">Tax: Price Major Value</th>
+                  <th class="col22">Resource URI</th>
+                  <th class="col23">ID</th>
+                  <th class="col24">Changed</th>
+                  <th class="col25">Created</th>
+                  <th class="col26">Quantity</th>
+                  <th class="col27">First Name</th>
+                  <th class="col28">Last Name</th>
+                  <th class="col29">Email</th>
+                  <th class="col30">Name</th>
+                  <th class="col31">Addresses</th>
+                  <th class="col32">Barcodes: Status</th>
+                  <th class="col33">Barcodes: Barcode</th>
+                  <th class="col34">Barcodes: Checkin Type</th>
+                  <th class="col35">Barcodes: Created</th>
+                  <th class="col36">Barcodes: Changed</th>
+                  <th class="col37">Answers</th>
+                  <th class="col38">Checked In</th>
+                  <th class="col39">Cancelled</th>
+                  <th class="col40">Refunded</th>
+                  <th class="col41">Affiliate</th>
+                  <th class="col42">Status</th>
+                  <th class="col43">Event ID</th>
+                  <th class="col44">Order ID</th>
+                  <th class="col45">Ticket Class ID</th>
               </tr>
           </table>
       </div>
